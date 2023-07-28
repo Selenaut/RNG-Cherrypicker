@@ -218,7 +218,7 @@ class RNGCherrypicker
 
     public static void Main()
     {
-        Stopwatch timer = new Stopwatch();
+        Stopwatch timer = new();
         timer.Start();
         
         int[] bytebuffer = new int[bufferLength];
@@ -241,9 +241,6 @@ class RNGCherrypicker
             bytebuffer[i * 12 + 10] = mg_king_table[i];
             bytebuffer[i * 12 + 11] = eg_king_table[i];
         }
-
-        //ConcurrentBag<SeedEval> seedBag = new();
-        //List<SeedEval> seedList = new();
 
         int numThreads = Environment.ProcessorCount - 1;
         int seedsPerThread = numSeeds / numThreads;
